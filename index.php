@@ -19,19 +19,16 @@ include  __DIR__ . './functions.php';
 
 <body>
 
-    <form action="" method="GET">
+    <form action="./show.php" method="GET">
 
-        <input type="text" value="<?php echo randomPassword() ?>">
-        <button>
-            <i class="fa-regular fa-clone"></i>
+
+        <input type="range" name="lenght" value="10" min="1" max="50" oninput="this.nextElementSibling.value = this.value">
+        <output>10</output>
+        <button onclick="randomPassword()">
+            <i class="fa-regular fa-circle-check"></i>
         </button>
-        <button>
-            <i class="fa-solid fa-arrows-rotate"></i>
-        </button>
-        <div>
-            <input type="range" name="lenght" value="10" min="1" max="50" oninput="this.nextElementSibling.value = this.value">
-            <output>10</output>
-        </div>
+
+
     </form>
 
 </body>

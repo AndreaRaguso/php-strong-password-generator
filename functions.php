@@ -1,5 +1,8 @@
 <?php
 
+
+session_start();
+
 function randomPassword()
 {
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!_-^\$%/=';
@@ -9,8 +12,13 @@ function randomPassword()
         $n = rand(0, $alphaLength);
         $pass[] = $alphabet[$n];
     }
-    return implode($pass);
+
+    $_SESSION['generate'] = implode($pass);
+
+    return $_SESSION['generate'];
 }
+
+
 
 
 ?>
